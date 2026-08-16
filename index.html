@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UK Solar &amp; Battery Calculator | Free Independent Estimate</title>
+  <meta name="description" content="Estimate UK solar panel size, home battery capacity, EV electricity demand, grid import and export, annual savings and simple payback.">
+  <meta name="google-site-verification" content="jkMhTjEet0DjQX3KZN_IcPw0JfZ4yDgTycbVsBe099s">
+  <link rel="canonical" href="https://uksolarsizer.co.uk/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:site_name" content="UK Solar Sizer">
+  <meta property="og:title" content="UK Solar &amp; Battery Calculator">
+  <meta property="og:description" content="Build an independent early-stage estimate for solar panels, home battery storage, EV demand, tariffs, savings and payback.">
+  <meta property="og:url" content="https://uksolarsizer.co.uk/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="UK Solar &amp; Battery Calculator">
+  <meta name="twitter:description" content="A free independent UK solar, battery and EV sizing estimate.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="UK Solar Sizer home">UK Solar Sizer</a>
+    <a class="button button-small" href="https://uksolarsizer.streamlit.app">Use Free Solar Calculator</a>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="page-title">
+      <div>
+        <p class="eyebrow">Independent UK planning tool</p>
+        <h1 id="page-title">UK Solar &amp; Battery Calculator</h1>
+        <p class="lead">Estimate a sensible solar array and home battery for your electricity use, roof and tariffs—before speaking to installers or comparing quotations.</p>
+        <div class="actions">
+          <a class="button" href="https://uksolarsizer.streamlit.app">Use Free Solar Calculator</a>
+          <a class="text-link" href="#example">See a worked example</a>
+        </div>
+        <p class="microcopy">Free to use. No registration required.</p>
+      </div>
+      <aside class="summary" aria-label="Calculator outputs">
+        <p class="summary-title">One estimate can compare</p>
+        <ul>
+          <li>Grid-only baseline</li>
+          <li>Solar only</li>
+          <li>Battery only</li>
+          <li>Solar plus battery</li>
+          <li>Tariff-optimised storage</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="section" aria-labelledby="what-it-does">
+      <p class="eyebrow">More than a panel-count estimate</p>
+      <h2 id="what-it-does">Explore the whole household energy picture</h2>
+      <div class="benefit-grid">
+        <article><h3>Solar sizing</h3><p>Estimate solar kWp and panel count from annual demand, roof space, orientation and UK location.</p></article>
+        <article><h3>Home battery sizing</h3><p>Compare a suggested storage range with your chosen usable capacity and inverter limits.</p></article>
+        <article><h3>EV electricity use</h3><p>Include driving demand once, without accidentally duplicating it in household consumption.</p></article>
+        <article><h3>Off-peak tariffs</h3><p>Explore grid charging and tariff optimisation when a suitable off-peak window is available.</p></article>
+        <article><h3>Import and export</h3><p>See estimated solar generation, household self-use, grid import and electricity exported.</p></article>
+        <article><h3>Savings and payback</h3><p>Use your own tariff and installed-cost assumptions to compare annual benefit and simple payback.</p></article>
+      </div>
+    </section>
+
+    <section class="section example" id="example" aria-labelledby="example-title">
+      <div>
+        <p class="eyebrow">Illustrative UK example</p>
+        <h2 id="example-title">A household using 4,000 kWh a year</h2>
+        <p>Suppose a home has space for ten 440 W panels, giving a 4.4 kWp array. At an assumed yield of 900 kWh per kWp, estimated annual generation is about 3,960 kWh.</p>
+        <p>If 45% is used directly, around 1,782 kWh avoids grid import before battery shifting. The remaining generation is either stored or exported. A battery can increase self-consumption, but its financial value depends on when the home uses energy, conversion losses, tariff spreads and the installed cost entered by the user.</p>
+      </div>
+      <dl class="example-numbers">
+        <div><dt>Annual demand</dt><dd>4,000 kWh</dd></div>
+        <div><dt>Solar array</dt><dd>4.4 kWp</dd></div>
+        <div><dt>Panels</dt><dd>10 × 440 W</dd></div>
+        <div><dt>Estimated generation</dt><dd>3,960 kWh/year</dd></div>
+      </dl>
+      <p class="note">This is an arithmetic example, not a performance or savings promise. The calculator lets you replace these assumptions with details relevant to your home.</p>
+    </section>
+
+    <section class="section" aria-labelledby="faq-title">
+      <p class="eyebrow">UK solar and battery questions</p>
+      <h2 id="faq-title">Frequently asked questions</h2>
+      <div class="faq">
+        <details><summary>How many solar panels do I need in the UK?</summary><p>It depends on annual electricity use, panel rating, roof space, orientation and local solar yield. The calculator estimates panel count and array kWp, then limits the result to the roof space you enter.</p></details>
+        <details><summary>What size home battery do I need?</summary><p>Battery sizing depends on how much electricity you use and when you use it—not annual kWh alone. Solar surplus, off-peak charging, usable depth of discharge, power limits and backup goals also matter.</p></details>
+        <details><summary>Is a solar battery worth it in the UK?</summary><p>Not always. A battery can improve self-consumption or shift off-peak electricity, but losses and additional installed cost may worsen simple payback. The calculator is allowed to show that storage does not improve the modelled economics.</p></details>
+        <details><summary>Can I include an electric car in a solar calculation?</summary><p>Yes. Entering EV mileage adds an estimated charging demand to household electricity use. Actual benefit also depends on whether charging happens during solar generation or an off-peak tariff window.</p></details>
+        <details><summary>Can a battery charge overnight on a cheap tariff?</summary><p>A compatible battery inverter/charger and tariff can make this possible. The financial result depends on the peak/off-peak price difference, battery efficiency, available charging hours and supplier terms.</p></details>
+        <details><summary>Does the estimate replace an installer or electrical design?</summary><p>No. It is an early-stage comparison. Roof structure, shading, cable sizing, protection, product compatibility, DNO requirements and final electrical design require competent professional assessment.</p></details>
+      </div>
+    </section>
+
+    <section class="cta" aria-labelledby="cta-title">
+      <div><p class="eyebrow">Start with your own assumptions</p><h2 id="cta-title">Build your solar plan</h2><p>Enter your postcode, electricity use and roof information for a quick estimate, or open Advanced mode for technical controls.</p></div>
+      <a class="button" href="https://uksolarsizer.streamlit.app">Use Free Solar Calculator</a>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Independent-estimate disclaimer:</strong> Results are indicative screening estimates, not quotations, guarantees or final designs. Verify technical, structural, financial, planning and grid-connection matters with appropriately qualified professionals.</p>
+    <p><strong>Affiliate disclosure:</strong> The calculator may include clearly identified Amazon affiliate links. As an Amazon Associate, UK Solar Sizer may earn from qualifying purchases at no extra cost to you. Affiliate relationships never affect calculations or safety results.</p>
+    <p>&copy; 2026 UK Solar Sizer</p>
+  </footer>
+</body>
+</html>
