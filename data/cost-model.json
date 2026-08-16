@@ -1,0 +1,14 @@
+{
+  "reviewed": "2026-08-16",
+  "currency": "GBP",
+  "inputs": ["battery_purchase","transport","health_test","bms_controller","can_interface","contactors_precharge","fusing_disconnect","busbars_cabling","enclosure_cooling","inverter_charger","monitoring","electrical_installation","grid_costs"],
+  "formulae": {
+    "battery_nominal_per_kwh": "battery_purchase / nominal_kwh",
+    "estimated_usable_kwh": "nominal_kwh * soh * chosen_soc_window",
+    "battery_usable_per_kwh": "battery_purchase / estimated_usable_kwh",
+    "complete_usable_per_kwh": "sum(all_inputs) / estimated_usable_kwh",
+    "annual_arbitrage_gross": "usable_kwh * cycles_per_year * (peak_rate - offpeak_rate / round_trip_efficiency)",
+    "simple_payback_years": "sum(all_inputs) / annual_net_benefit"
+  },
+  "market_prices": []
+}

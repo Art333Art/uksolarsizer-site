@@ -1,0 +1,11 @@
+{
+  "reviewed": "2026-08-16",
+  "families": [
+    {"id":"nissan-leaf","vehicle":"Nissan Leaf","capacity_kwh":[24,30,40,62],"chemistry":"Lithium-ion; generation-specific cathode formulation","voltage_class":"High voltage, roughly 360 V nominal","cooling":"Passive air","integration":"Whole-pack support documented by Battery-Emulator; verify exact pack and inverter pair","confidence":"mixed-primary-and-project"},
+    {"id":"bmw-i3","vehicle":"BMW i3","capacity_kwh":[22,33,42.2],"chemistry":"NMC","voltage_class":"High voltage","cooling":"Liquid-cooled pack","integration":"Open-source project support exists; exact variants require verification","confidence":"overview-only"},
+    {"id":"vw-meb","vehicle":"Volkswagen MEB family","capacity_kwh":[55,62,82],"chemistry":"Predominantly NMC; variant-dependent","voltage_class":"High voltage","cooling":"Liquid-cooled pack","integration":"Open-source project support exists for selected packs","confidence":"overview-only"},
+    {"id":"renault-zoe","vehicle":"Renault Zoe","capacity_kwh":[22,41,52],"chemistry":"Lithium-ion; variant-dependent","voltage_class":"High voltage","cooling":"Air-cooled pack","integration":"Generation-specific open-source support; ownership/lease history can matter","confidence":"overview-only"},
+    {"id":"hyundai-kia","vehicle":"Hyundai/Kia EV families","capacity_kwh":[28,39.2,64,77.4],"chemistry":"Mostly NMC/NCM; model-dependent","voltage_class":"High voltage; 400 V and 800 V families","cooling":"Generally liquid-cooled","integration":"Selected 64 kWh and E-GMP support exists; do not generalise across models","confidence":"overview-only"},
+    {"id":"tesla","vehicle":"Tesla S/3/X/Y families","capacity_kwh":[],"chemistry":"NCA, NMC or LFP depending model, plant and variant","voltage_class":"High voltage","cooling":"Liquid-cooled","integration":"Selected complete-pack support exists; variant identification is essential","confidence":"overview-only"}
+  ]
+}
