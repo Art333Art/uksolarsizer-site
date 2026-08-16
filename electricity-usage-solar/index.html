@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UK Household Electricity Usage for Solar &amp; Battery Sizing</title>
+  <meta name="description" content="Find annual household electricity use in kWh, avoid double-counting EV demand, and use smart-meter timing to improve UK solar and battery sizing.">
+  <meta name="google-site-verification" content="jkMhTjEet0DjQX3KZN_IcPw0JfZ4yDgTycbVsBe099s"><link rel="canonical" href="https://uksolarsizer.co.uk/electricity-usage-solar/">
+  <meta property="og:type" content="article"><meta property="og:locale" content="en_GB"><meta property="og:site_name" content="UK Solar Sizer"><meta property="og:title" content="Household Electricity Usage for Solar Sizing"><meta property="og:description" content="Build a reliable annual kWh baseline and use consumption timing to improve solar and battery estimates."><meta property="og:url" content="https://uksolarsizer.co.uk/electricity-usage-solar/">
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="Electricity Usage for Solar Sizing"><meta name="twitter:description" content="Use bills and smart-meter data to build a better solar and battery estimate.">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"UK Household Electricity Usage for Solar and Battery Sizing","description":"How to use annual kWh and smart-meter timing without double-counting future demand.","inLanguage":"en-GB","mainEntityOfPage":"https://uksolarsizer.co.uk/electricity-usage-solar/","dateModified":"2026-08-16","publisher":{"@type":"Organization","name":"UK Solar Sizer","url":"https://uksolarsizer.co.uk/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"UK Solar Sizer","item":"https://uksolarsizer.co.uk/"},{"@type":"ListItem","position":2,"name":"Electricity usage for solar","item":"https://uksolarsizer.co.uk/electricity-usage-solar/"}]}]}</script>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="site-header"><a class="brand" href="/">UK Solar Sizer</a><nav class="primary-nav" aria-label="Main navigation"><a href="/solar-panel-sizing/">Solar sizing</a><a href="/home-battery-sizing/">Battery sizing</a><a href="/solar-panel-costs-payback/">Costs &amp; payback</a><a href="/electricity-usage-solar/" aria-current="page">Electricity use</a></nav><a class="button button-small" href="https://uksolarsizer.streamlit.app">Use Free Solar Calculator</a></header>
+  <main>
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Electricity usage for solar</nav>
+    <header class="guide-hero"><p class="eyebrow">Electricity use and solar</p><h1>Build the right household demand input</h1><p class="lead">Annual kWh helps size solar generation. Half-hourly timing helps estimate self-consumption and battery value. Keeping those jobs separate prevents misleading results.</p><div class="actions"><a class="button" href="https://uksolarsizer.streamlit.app">Use your electricity figures</a></div></header>
+    <div class="guide-layout">
+      <article class="article">
+        <p>Your electricity bill is usually a better starting point than a “typical home” figure. Ofgem’s Typical Domestic Consumption Values are benchmarks used when actual usage is unknown; they are not a prediction for an individual property. Occupancy, heating, hot water, cooking, EV charging and working patterns can make homes with similar floor area very different.</p>
+        <h2 id="annual">Find twelve months of actual kWh</h2>
+        <p>Look for annual consumption in your supplier account, bill summary or smart-meter portal. Use kWh, not the bill amount in pounds. A bill combines unit rates, standing charges, VAT and sometimes adjustments, so cost cannot be converted reliably into energy without all of those details.</p>
+        <p>If you have less than a year, add the available meter intervals and recognise the seasonal gap. Multiplying one winter month or one summer month by twelve can be misleading. Daily usage can be converted to an annual screening value, but a full year is preferable.</p>
+        <div class="formula">Annual electricity use (kWh) = sum of metered consumption over twelve months</div>
+        <h2 id="timing">Why timing changes battery value</h2>
+        <p>Two homes can each use 4,000 kWh/year and need different batteries. A home using electricity during sunny hours may consume more solar directly. Another with a strong evening peak may have more energy available to shift through storage. Battery dispatch also depends on solar surplus and tariff periods.</p>
+        <p>Half-hourly smart-meter data can show:</p>
+        <ul><li>baseload while the home is quiet;</li><li>morning and evening demand peaks;</li><li>weekday versus weekend patterns;</li><li>EV charging sessions;</li><li>how much load falls inside an off-peak tariff window.</li></ul>
+        <p>A valid dataset needs timestamps, kWh values and checks for duplicates, malformed rows and missing periods. Files contain sensitive household-pattern information, so prefer tools that process them locally and explain whether data is retained.</p>
+        <h2 id="ev">Add EV charging once</h2>
+        <p>If your annual household figure already includes home EV charging, do not add the same mileage again. If the EV is new, estimate future charger input from annual miles, vehicle efficiency and charging losses.</p>
+        <div class="formula">EV charger input (kWh/year) ≈ annual miles ÷ miles per kWh ÷ charging efficiency</div>
+        <p>This is an energy estimate, not a guarantee. Temperature, speed, vehicle, route and charging behaviour affect real consumption. For solar self-use, charging time matters as much as annual miles: daytime charging may use solar directly, while overnight charging may align with an off-peak tariff.</p>
+        <h2 id="future">Model heat pumps and other future loads separately</h2>
+        <p>Do not hide planned electrification inside the current baseline. Create a current-use case and one or more future cases. Heat-pump demand is seasonal and should come from a proper heat-loss and system assessment rather than a generic uplift. Electric hot water, induction cooking, air conditioning and additional occupants can also change both annual demand and its timing.</p>
+        <h2 id="solar">Use demand correctly in solar sizing</h2>
+        <p>Dividing annual demand by a location-specific solar yield creates an initial array target. It does not mean all generated energy will be used in the home. Apply roof constraints, then estimate direct self-consumption, battery shifting, grid import and export separately. Our <a href="/solar-panel-sizing/">solar sizing guide</a> walks through that sequence.</p>
+        <h2 id="tariff">Keep energy and tariff inputs separate</h2>
+        <p>Enter import prices in pence per kWh, and keep peak, off-peak and export rates distinct. Standing charges are generally not avoided by adding solar. For tariff optimisation, record the actual off-peak availability window as well as its price: a cheap rate is not useful for battery charging if the available power and hours cannot supply the intended energy.</p>
+        <h2 id="checklist">Input checklist</h2>
+        <ol><li>Use actual annual kWh where available.</li><li>Identify whether EV charging is already included.</li><li>Keep future loads as a separate scenario.</li><li>Use half-hourly data for timing-sensitive battery decisions.</li><li>Check missing intervals before trusting a smart-meter file.</li><li>Enter tariff rates and windows from current supplier terms.</li></ol>
+        <div class="article-cta"><p><strong>Turn demand into system scenarios.</strong><br>Use annual kWh quickly, then compare solar, battery and tariffs.</p><a class="button" href="https://uksolarsizer.streamlit.app">Use Free Solar Calculator</a></div>
+        <h2 id="sources">Useful sources and related guides</h2>
+        <ul class="source-list"><li><a href="https://www.ofgem.gov.uk/consultation/review-typical-domestic-consumption-values">Ofgem review of Typical Domestic Consumption Values</a> explains their role as reference values.</li><li><a href="https://energysavingtrust.org.uk/advice/solar-panel-battery-storage">Energy Saving Trust battery guidance</a> discusses usage, surplus generation and time-of-use charging.</li></ul>
+        <div class="related"><a href="/solar-panel-sizing/">Convert annual demand into solar kWp →</a><a href="/home-battery-sizing/">Use timing to compare battery sizes →</a></div>
+      </article>
+      <aside class="toc"><p>On this page</p><ol><li><a href="#annual">Annual kWh</a></li><li><a href="#timing">Usage timing</a></li><li><a href="#ev">EV charging</a></li><li><a href="#future">Future loads</a></li><li><a href="#solar">Solar sizing</a></li><li><a href="#checklist">Checklist</a></li></ol></aside>
+    </div>
+  </main>
+  <footer><nav class="footer-nav"><a href="/">Calculator overview</a><a href="/solar-panel-sizing/">Solar sizing</a><a href="/home-battery-sizing/">Battery sizing</a><a href="/solar-panel-costs-payback/">Costs and payback</a></nav><p><strong>Privacy note:</strong> Smart-meter data can reveal household routines. Check how any service processes and retains a file before uploading it.</p><p><strong>Independent-estimate disclaimer:</strong> This guide provides general early-stage information, not a bill forecast or final system design.</p><p>&copy; 2026 UK Solar Sizer</p></footer>
+</body>
+</html>

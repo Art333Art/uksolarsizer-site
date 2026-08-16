@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UK Solar Panel Sizing Guide: kWp, Panels &amp; Roof Space</title>
+  <meta name="description" content="Work out a sensible UK solar panel system size from electricity use, local yield, panel wattage, roof space, orientation and future demand.">
+  <meta name="google-site-verification" content="jkMhTjEet0DjQX3KZN_IcPw0JfZ4yDgTycbVsBe099s"><link rel="canonical" href="https://uksolarsizer.co.uk/solar-panel-sizing/">
+  <meta property="og:type" content="article"><meta property="og:locale" content="en_GB"><meta property="og:site_name" content="UK Solar Sizer"><meta property="og:title" content="UK Solar Panel Sizing Guide"><meta property="og:description" content="Understand kWp, panel count, local yield and roof constraints before sizing a UK solar array."><meta property="og:url" content="https://uksolarsizer.co.uk/solar-panel-sizing/">
+  <meta name="twitter:card" content="summary"><meta name="twitter:title" content="UK Solar Panel Sizing Guide"><meta name="twitter:description" content="A practical guide to kWp, panel count, yield and roof constraints.">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"UK Solar Panel Sizing Guide","description":"How to estimate solar array kWp and panel count for a UK home.","inLanguage":"en-GB","mainEntityOfPage":"https://uksolarsizer.co.uk/solar-panel-sizing/","dateModified":"2026-08-16","publisher":{"@type":"Organization","name":"UK Solar Sizer","url":"https://uksolarsizer.co.uk/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"UK Solar Sizer","item":"https://uksolarsizer.co.uk/"},{"@type":"ListItem","position":2,"name":"Solar panel sizing","item":"https://uksolarsizer.co.uk/solar-panel-sizing/"}]}]}</script>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="site-header"><a class="brand" href="/">UK Solar Sizer</a><nav class="primary-nav" aria-label="Main navigation"><a href="/solar-panel-sizing/" aria-current="page">Solar sizing</a><a href="/home-battery-sizing/">Battery sizing</a><a href="/solar-panel-costs-payback/">Costs &amp; payback</a><a href="/electricity-usage-solar/">Electricity use</a></nav><a class="button button-small" href="https://uksolarsizer.streamlit.app">Use Free Solar Calculator</a></header>
+  <main>
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a> / Solar panel sizing</nav>
+    <header class="guide-hero"><p class="eyebrow">UK solar panel sizing</p><h1>How many solar panels does your home need?</h1><p class="lead">A useful answer connects annual electricity demand to local solar yield, then checks whether the resulting array fits the roof. Panel count alone is not enough.</p><div class="actions"><a class="button" href="https://uksolarsizer.streamlit.app">Calculate your solar size</a></div></header>
+    <div class="guide-layout">
+      <article class="article">
+        <p>A solar photovoltaic system is normally described by its peak DC capacity in kilowatts peak (kWp). A 4.4 kWp array could, for example, contain ten 440 W modules. The kWp rating is not the electricity it will produce each year: annual generation also depends on location, roof direction and pitch, shading, system losses and equipment performance.</p>
+        <h2 id="start">Start with annual electricity use</h2>
+        <p>Use actual annual kWh from bills or your supplier account when possible. Add new demand you genuinely expect—such as an EV or heat pump—but do not add energy already included in the annual figure. Our <a href="/electricity-usage-solar/">electricity usage guide</a> explains how to build a clean demand estimate.</p>
+        <p>Sizing an array to equal annual demand is a useful first comparison, not a promise of self-sufficiency. Solar production is concentrated in daylight and is much higher in summer, while household demand often peaks on winter evenings. The grid, a battery or load shifting still balances those timing differences.</p>
+        <h2 id="kwp">Convert demand into an initial kWp target</h2>
+        <p>Specific yield expresses estimated annual generation per installed kWp. It is written as kWh/kWp/year. A location and roof-specific yield is more informative than one national average.</p>
+        <div class="formula">Initial array size (kWp) = annual electricity target (kWh) ÷ specific yield (kWh/kWp/year)</div>
+        <p>For an illustrative 4,000 kWh target and an assumed yield of 900 kWh/kWp/year, the arithmetic gives 4.44 kWp. With 440 W panels, dividing 4,440 W by 440 W gives roughly ten panels. This example is deliberately simple; it does not account for roof constraints or guarantee 4,000 kWh of usable household energy.</p>
+        <h2 id="roof">Apply roof space, orientation and shading</h2>
+        <p>The theoretical target must be checked against the usable roof. Allow for module dimensions, edges, ridges, valleys, roof windows, access and any exclusion zones required by the final design. A competent survey should assess roof condition, loading and fixing method.</p>
+        <ul><li><strong>Orientation:</strong> south-facing roofs commonly provide a strong annual yield, but east/west arrays can spread generation across more of the day.</li><li><strong>Pitch:</strong> tilt affects annual and seasonal output. Flat-roof systems also need a mounting layout that manages wind and row-to-row shading.</li><li><strong>Shading:</strong> trees, chimneys and nearby buildings can change output materially and should not be reduced to a guess.</li><li><strong>Location:</strong> UK solar resource varies geographically, so postcode-aware estimates are preferable.</li></ul>
+        <p>The calculator uses postcode coordinates and roof inputs with the European Commission’s PVGIS service when available. PVGIS is an estimate, not a site survey.</p>
+        <h2 id="inverter">Check the inverter and connection</h2>
+        <p>Array kWp is a DC rating; inverter output is an AC rating. They do not have to be identical, but the DC/AC ratio, string voltage, current, MPPT window and manufacturer limits must be checked together. A hybrid inverter may share an AC ceiling between solar and battery operation, while an AC-coupled battery uses a separate inverter/charger.</p>
+        <p>The distribution network connection route depends on the complete generating installation and applicable type-tested equipment. Export limitation does not by itself remove the need for the correct DNO process.</p>
+        <h2 id="oversize">Should you size for future demand?</h2>
+        <p>It can be reasonable to model a future EV, heat pump or increased home occupancy, provided the extra kWh is stated separately. Compare today’s demand and a future-demand case rather than silently inflating the baseline. A larger array can increase exports when new demand has not yet arrived, so include the export tariff as its own assumption.</p>
+        <h2 id="next">What to do next</h2>
+        <ol><li>Find twelve months of actual electricity use.</li><li>Measure usable roof area or estimate a maximum panel count.</li><li>Run a postcode and orientation-aware calculation.</li><li>Compare solar only with storage rather than assuming a battery is necessary.</li><li>Ask installers to explain generation, self-consumption and export assumptions separately.</li></ol>
+        <div class="article-cta"><p><strong>Ready to use your own figures?</strong><br>Calculate array kWp, panel count, generation and scenarios.</p><a class="button" href="https://uksolarsizer.streamlit.app">Use Free Solar Calculator</a></div>
+        <h2 id="sources">Useful sources and related guides</h2>
+        <ul class="source-list"><li><a href="https://re.jrc.ec.europa.eu/pvg_tools/en/">European Commission PVGIS</a> for location and orientation-aware solar estimates.</li><li><a href="https://energysavingtrust.org.uk/advice/solar-panels/">Energy Saving Trust solar panel guidance</a> for UK consumer considerations.</li><li><a href="https://mcscertified.com/consumers-communities/">MCS consumer guidance</a> for certified installation and consumer protection.</li></ul>
+        <div class="related"><a href="/electricity-usage-solar/">Next: estimate household electricity use →</a><a href="/solar-panel-costs-payback/">Next: understand costs and payback →</a></div>
+      </article>
+      <aside class="toc"><p>On this page</p><ol><li><a href="#start">Annual use</a></li><li><a href="#kwp">kWp target</a></li><li><a href="#roof">Roof constraints</a></li><li><a href="#inverter">Inverter</a></li><li><a href="#oversize">Future demand</a></li><li><a href="#next">Next steps</a></li></ol></aside>
+    </div>
+  </main>
+  <footer><nav class="footer-nav"><a href="/">Calculator overview</a><a href="/home-battery-sizing/">Battery sizing</a><a href="/solar-panel-costs-payback/">Costs and payback</a><a href="/electricity-usage-solar/">Electricity usage</a></nav><p><strong>Independent-estimate disclaimer:</strong> This guide and calculator provide early-stage estimates, not quotations, guarantees or final designs. Verify structural, electrical, financial, planning and grid-connection matters with competent professionals.</p><p>&copy; 2026 UK Solar Sizer</p></footer>
+</body>
+</html>

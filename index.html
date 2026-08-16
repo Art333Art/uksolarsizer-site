@@ -16,11 +16,50 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="UK Solar &amp; Battery Calculator">
   <meta name="twitter:description" content="A free independent UK solar, battery and EV sizing estimate.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://uksolarsizer.co.uk/#website",
+        "url": "https://uksolarsizer.co.uk/",
+        "name": "UK Solar Sizer",
+        "inLanguage": "en-GB"
+      },
+      {
+        "@type": "WebApplication",
+        "@id": "https://uksolarsizer.co.uk/#calculator",
+        "name": "UK Solar & Battery Calculator",
+        "url": "https://uksolarsizer.streamlit.app",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any web browser",
+        "isAccessibleForFree": true,
+        "description": "Independent early-stage calculator for UK solar panels, home battery storage, EV demand, tariffs, savings and simple payback.",
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "GBP"}
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "How many solar panels do I need in the UK?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on annual electricity use, panel rating, roof space, orientation and local solar yield. The calculator estimates panel count and array kWp, then limits the result to the roof space entered."}},
+          {"@type": "Question", "name": "What size home battery do I need?", "acceptedAnswer": {"@type": "Answer", "text": "Battery sizing depends on how much electricity a home uses and when it uses it, along with solar surplus, off-peak charging, usable depth of discharge, power limits and backup goals."}},
+          {"@type": "Question", "name": "Is a solar battery worth it in the UK?", "acceptedAnswer": {"@type": "Answer", "text": "Not always. Storage can improve self-consumption or shift off-peak electricity, but conversion losses and additional installed cost can worsen simple payback."}}
+        ]
+      }
+    ]
+  }
+  </script>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="site-header">
     <a class="brand" href="/" aria-label="UK Solar Sizer home">UK Solar Sizer</a>
+    <nav class="primary-nav" aria-label="Main navigation">
+      <a href="/solar-panel-sizing/">Solar sizing</a>
+      <a href="/home-battery-sizing/">Battery sizing</a>
+      <a href="/solar-panel-costs-payback/">Costs &amp; payback</a>
+      <a href="/electricity-usage-solar/">Electricity use</a>
+    </nav>
     <a class="button button-small" href="https://uksolarsizer.streamlit.app">Use Free Solar Calculator</a>
   </header>
 
@@ -52,12 +91,23 @@
       <p class="eyebrow">More than a panel-count estimate</p>
       <h2 id="what-it-does">Explore the whole household energy picture</h2>
       <div class="benefit-grid">
-        <article><h3>Solar sizing</h3><p>Estimate solar kWp and panel count from annual demand, roof space, orientation and UK location.</p></article>
-        <article><h3>Home battery sizing</h3><p>Compare a suggested storage range with your chosen usable capacity and inverter limits.</p></article>
+        <article><h3><a href="/solar-panel-sizing/">Solar sizing</a></h3><p>Estimate solar kWp and panel count from annual demand, roof space, orientation and UK location.</p></article>
+        <article><h3><a href="/home-battery-sizing/">Home battery sizing</a></h3><p>Compare a suggested storage range with your chosen usable capacity and inverter limits.</p></article>
         <article><h3>EV electricity use</h3><p>Include driving demand once, without accidentally duplicating it in household consumption.</p></article>
         <article><h3>Off-peak tariffs</h3><p>Explore grid charging and tariff optimisation when a suitable off-peak window is available.</p></article>
         <article><h3>Import and export</h3><p>See estimated solar generation, household self-use, grid import and electricity exported.</p></article>
-        <article><h3>Savings and payback</h3><p>Use your own tariff and installed-cost assumptions to compare annual benefit and simple payback.</p></article>
+        <article><h3><a href="/solar-panel-costs-payback/">Savings and payback</a></h3><p>Use your own tariff and installed-cost assumptions to compare annual benefit and simple payback.</p></article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="guides-title">
+      <p class="eyebrow">Practical UK guides</p>
+      <h2 id="guides-title">Understand the inputs before calculating</h2>
+      <div class="guide-grid">
+        <a class="guide-card" href="/solar-panel-sizing/"><span>Solar panels</span><h3>How to size a UK solar array</h3><p>Move from annual kWh and local yield to array kWp and a roof-limited panel count.</p></a>
+        <a class="guide-card" href="/home-battery-sizing/"><span>Battery storage</span><h3>Choose usable capacity and power</h3><p>Understand kWh, kW, depth of discharge, timing, losses and off-peak charging.</p></a>
+        <a class="guide-card" href="/solar-panel-costs-payback/"><span>Economics</span><h3>Compare costs, savings and payback</h3><p>Use complete quotations and separate avoided import from export income.</p></a>
+        <a class="guide-card" href="/electricity-usage-solar/"><span>Electricity demand</span><h3>Build a better annual-use estimate</h3><p>Read your bills or smart meter and account for EVs, heat pumps and future demand once.</p></a>
       </div>
     </section>
 
@@ -97,6 +147,7 @@
   </main>
 
   <footer>
+    <nav class="footer-nav" aria-label="Guide links"><a href="/solar-panel-sizing/">Solar sizing</a><a href="/home-battery-sizing/">Battery sizing</a><a href="/solar-panel-costs-payback/">Costs and payback</a><a href="/electricity-usage-solar/">Electricity usage</a></nav>
     <p><strong>Independent-estimate disclaimer:</strong> Results are indicative screening estimates, not quotations, guarantees or final designs. Verify technical, structural, financial, planning and grid-connection matters with appropriately qualified professionals.</p>
     <p><strong>Affiliate disclosure:</strong> The calculator may include clearly identified Amazon affiliate links. As an Amazon Associate, UK Solar Sizer may earn from qualifying purchases at no extra cost to you. Affiliate relationships never affect calculations or safety results.</p>
     <p>&copy; 2026 UK Solar Sizer</p>
