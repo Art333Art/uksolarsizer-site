@@ -19,6 +19,7 @@ class PageParser(HTMLParser):
     def __init__(self):
         super().__init__()
         self.links, self.scripts, self.titles, self.descriptions, self.canonicals = [], [], [], [], []
+        self.h1_count, self.images_missing_alt, self.nav_count = 0, 0, 0
         self._title = False
 
     def handle_starttag(self, tag, attrs):
@@ -28,6 +29,9 @@ class PageParser(HTMLParser):
         if tag == "meta" and data.get("name") == "description": self.descriptions.append(data.get("content", ""))
         if tag == "link" and data.get("rel") == "canonical": self.canonicals.append(data.get("href", ""))
         if tag == "title": self._title = True
+        if tag == "h1": self.h1_count += 1
+        if tag == "img" and "alt" not in data: self.images_missing_alt += 1
+        if tag == "nav": self.nav_count += 1
 
     def handle_endtag(self, tag):
         if tag == "title": self._title = False
@@ -50,6 +54,9 @@ for path in sorted(ROOT.glob("**/index.html")):
     if VERIFY not in text: errors.append(f"{label}: missing Google verification")
     if len(parser.titles) != 1 or not parser.titles[0]: errors.append(f"{label}: invalid title")
     if len(parser.descriptions) != 1: errors.append(f"{label}: requires one meta description")
+    if parser.h1_count != 1: errors.append(f"{label}: expected one h1, found {parser.h1_count}")
+    if parser.images_missing_alt: errors.append(f"{label}: image missing alt text")
+    if parser.nav_count < 1: errors.append(f"{label}: missing semantic navigation")
     if parser.titles: titles.setdefault(parser.titles[0], []).append(str(label))
     if parser.descriptions: descriptions.setdefault(parser.descriptions[0], []).append(str(label))
     expected = page_url(path)
@@ -85,8 +92,9 @@ for item in commercial["products"]:
     if not item.get("enabled") and item.get("destination") and item["destination"] in html:
         errors.append(f"disabled product rendered: {item['id']}")
 if CALCULATOR not in html: errors.append("calculator link missing")
-if ".primary-nav { display: none; }" not in (ROOT / "styles.css").read_text(encoding="utf-8"):
-    errors.append("responsive navigation rule missing")
+css = (ROOT / "styles.css").read_text(encoding="utf-8")
+for rule in ("@media (max-width: 760px)", ".primary-nav { display: grid", ":focus-visible", "overflow-x: auto"):
+    if rule not in css: errors.append(f"responsive/accessibility CSS missing: {rule}")
 
 if errors:
     print("VALIDATION FAILED")
