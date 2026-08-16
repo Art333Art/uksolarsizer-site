@@ -1,5 +1,30 @@
 {
   "reviewed": "2026-08-16",
   "disclosure": "As an Amazon Associate, UK Solar Sizer may earn from qualifying purchases at no extra cost to you.",
-  "products": []
+  "products": [
+    {
+      "id": "amazon_ev_charger",
+      "title": "VORSPRUNG 7.4 kW EV charger",
+      "destination": "https://link.amazon/B03Lpp2EH",
+      "enabled": true
+    },
+    {
+      "id": "amazon_energy_monitor",
+      "title": "OWON bi-directional energy monitor",
+      "destination": "https://link.amazon/B0fdrsDTb",
+      "enabled": true
+    },
+    {
+      "id": "amazon_solar_tools",
+      "title": "SOMELINE solar crimping kit",
+      "destination": "https://link.amazon/B0f4YmGAU",
+      "enabled": true
+    },
+    {
+      "id": "amazon_electricals",
+      "title": "16 mm² 3-core SWA cable",
+      "destination": "https://link.amazon/B05z6RNmr",
+      "enabled": true
+    }
+  ]
 }

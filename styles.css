@@ -215,6 +215,17 @@ footer { background: #262730; border: 0; color: #e6eaf1; max-width: none; paddin
 footer a { color: #e8f6f2 !important; }
 footer::before { color: var(--white); content: 'UK Solar Sizer'; display: block; font-size: 1.15rem; font-weight: 850; margin-bottom: 1rem; }
 
+.affiliate-float { background: #20232d; border: 1px solid var(--line); border-radius: 1rem; bottom: 1rem; box-shadow: 0 18px 50px #00000066; color: var(--ink); max-height: calc(100vh - 2rem); opacity: 0; overflow: auto; padding: 1rem; pointer-events: none; position: fixed; right: 1rem; transform: translateY(1rem); transition: opacity .2s ease, transform .2s ease; width: min(330px, calc(100% - 2rem)); z-index: 20; }
+.affiliate-float.is-visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+.affiliate-float-header { align-items: flex-start; display: flex; gap: 1rem; justify-content: space-between; }
+.affiliate-float h2 { font-size: 1rem; letter-spacing: 0; margin: 0 0 .75rem; }
+.affiliate-float-close { background: transparent; border: 1px solid var(--line); border-radius: 50%; color: var(--muted); cursor: pointer; flex: 0 0 2rem; font: inherit; height: 2rem; line-height: 1; padding: 0; }
+.affiliate-float-close:hover { border-color: var(--green); color: var(--white); }
+.affiliate-float-links { display: grid; gap: .45rem; }
+.affiliate-float-links a { background: var(--blue-soft); border: 1px solid var(--line); border-radius: .6rem; color: #dff4ff; display: block; font-size: .84rem; font-weight: 700; padding: .65rem .75rem; text-decoration: none; }
+.affiliate-float-links a:hover, .affiliate-float-links a:focus-visible { background: var(--cyan-soft); border-color: var(--green); color: var(--white); }
+.affiliate-float-disclosure { color: var(--muted); font-size: .69rem; line-height: 1.4; margin: .75rem 0 0; }
+
 @media (max-width: 760px) {
   .site-header { align-items: center; flex-wrap: wrap; }
   .primary-nav { display: grid; flex: 1 0 100%; gap: .4rem; grid-template-columns: repeat(2, 1fr); order: 3; }
@@ -239,6 +250,7 @@ footer::before { color: var(--white); content: 'UK Solar Sizer'; display: block;
 
 @media (max-width: 520px) {
   .input-grid, .tool-results { grid-template-columns: 1fr; }
+  .affiliate-float { bottom: .6rem; max-height: min(70vh, 430px); right: .6rem; width: calc(100% - 1.2rem); }
 }
 
 @media (max-width: 430px) {
@@ -252,4 +264,5 @@ footer::before { color: var(--white); content: 'UK Solar Sizer'; display: block;
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .button { transition: none; }
+  .affiliate-float { transition: none; }
 }
