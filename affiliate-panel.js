@@ -6,6 +6,14 @@
   let dismissed = false;
 
   const isMobile = () => mobileQuery.matches;
+  const recordClick = (id) => {
+    try {
+      const key = 'ukss-affiliate-clicks';
+      const counts = JSON.parse(localStorage.getItem(key) || '{}');
+      counts[id] = (counts[id] || 0) + 1;
+      localStorage.setItem(key, JSON.stringify(counts));
+    } catch (_) {}
+  };
 
   const setMobilePanelState = (open) => {
     if (!panel || !isMobile()) return;
@@ -52,12 +60,8 @@
       close.setAttribute('aria-label', 'Close product links');
       close.textContent = '×';
       close.addEventListener('click', () => {
-        if (isMobile()) {
-          setMobilePanelState(false);
-        } else {
-          dismissed = true;
-          panel.remove();
-        }
+        if (isMobile()) setMobilePanelState(false);
+        else { dismissed = true; panel.remove(); }
       });
       header.append(title, close);
 
@@ -69,6 +73,8 @@
         link.target = '_blank';
         link.rel = 'sponsored noopener';
         link.textContent = product.title;
+        link.dataset.productId = product.id;
+        link.addEventListener('click', () => recordClick(product.id));
         links.append(link);
       });
 
@@ -85,10 +91,7 @@
       launcher.setAttribute('aria-label', 'Open useful solar and EV product links');
       launcher.setAttribute('aria-expanded', 'false');
       launcher.style.cssText = 'display:none;position:fixed;right:12px;top:86px;z-index:1001;align-items:center;justify-content:center;min-height:42px;padding:0 14px;border:1px solid #62ddb7;border-radius:999px;background:#287d69;color:#fff;font:700 14px/1 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;box-shadow:0 5px 18px #0008;cursor:pointer;';
-      launcher.addEventListener('click', () => {
-        const open = panel.style.display !== 'block';
-        setMobilePanelState(open);
-      });
+      launcher.addEventListener('click', () => setMobilePanelState(panel.style.display !== 'block'));
       document.body.append(launcher);
 
       const applyMobilePanelStyle = () => {
