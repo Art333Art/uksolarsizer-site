@@ -2,15 +2,24 @@ name: Site health
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
   schedule:
-    - cron: '17 7 * * 1'
+    - cron: '17 7 * * *'
 
 permissions:
   contents: read
 
+concurrency:
+  group: site-health-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   check:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - name: Check out site
         uses: actions/checkout@v4
@@ -20,5 +29,8 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Check internal and commercial links
+      - name: Validate repository content
+        run: python tools/validate_site.py
+
+      - name: Check published internal and commercial links
         run: python scripts/check_site_health.py
