@@ -34,3 +34,16 @@ jobs:
 
       - name: Check published internal and commercial links
         run: python scripts/check_site_health.py
+
+# Refresh this scheduled workflow without creating dummy repository commits.
+  # GitHub disables schedules in inactive public repositories after 60 days.
+  keep-schedule-active:
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - name: Refresh scheduled workflow activation
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X PUT "repos/${GITHUB_REPOSITORY}/actions/workflows/site-health.yml/enable"
